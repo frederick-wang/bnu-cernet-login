@@ -11,10 +11,8 @@
 
 ## 安装
 
-推荐使用 `pnpm` 包管理器代替 `npm`。
-
 ```bash
-pnpm i
+npm i
 ```
 
 ## 使用
@@ -22,11 +20,15 @@ pnpm i
 首先编译：
 
 ```bash
-pnpm run build
+npm run build
 ```
 
 然后运行：
 
 ```bash
-pnpm run start -- login -u <学号> -p <密码>
+npm run start -- login -u <学号> -p <密码>
 ```
+
+## 运行效果截图
+
+![image](https://user-images.githubusercontent.com/6050869/136768678-e1556279-d167-41ca-b133-18aea59da462.png)
