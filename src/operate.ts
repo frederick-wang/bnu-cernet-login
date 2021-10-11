@@ -19,10 +19,18 @@ const login = async (username: string, password: string): Promise<void> => {
   await page.type('input#password', password)
   await page.click('button#login')
   await page.waitForNetworkIdle()
+  console.log(
+    await page.evaluate(() => {
+      const $body = document.querySelector('body')
+      return $body ? $body.innerHTML : null
+    })
+  )
   const { error, message, data } = await page.evaluate(() => {
     const $body = document.querySelector('body')
     const bodyHTML = $body ? $body.innerHTML : ''
-    if (bodyHTML.includes('当前IP已在线')) {
+    if (bodyHTML.includes('用户不存在')) {
+      return { error: true, message: '用户不存在' }
+    } else if (bodyHTML.includes('当前IP已在线')) {
       return { error: true, message: '当前IP已在线' }
     } else {
       const $username = document.querySelector<HTMLSpanElement>('#user_name')
