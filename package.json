@@ -1,0 +1,43 @@
+{
+  "name": "bnu-cernet-login",
+  "version": "1.0.0",
+  "description": "A Script For logging in bnu cernet via gw.bnu.edu.cn.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "cross-env NODE_ENV=development ts-node src/index.ts",
+    "build": "rm -rf dist && tsc",
+    "watch": "rm -rf dist && tsc -w",
+    "lint": "eslint --fix . --ext .ts && prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frederick-wang/bnu-cernet-login.git"
+  },
+  "keywords": [
+    "bnu",
+    "cernet"
+  ],
+  "author": "Zhaoji Wang",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/frederick-wang/bnu-cernet-login/issues"
+  },
+  "homepage": "https://github.com/frederick-wang/bnu-cernet-login#readme",
+  "dependencies": {
+    "commander": "^8.2.0",
+    "puppeteer": "^10.4.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.2.1",
+    "tsconfig-paths": "^3.11.0",
+    "typescript": "^4.4.3"
+  }
+}
