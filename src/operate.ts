@@ -19,12 +19,6 @@ const login = async (username: string, password: string): Promise<void> => {
   await page.type('input#password', password)
   await page.click('button#login')
   await page.waitForNetworkIdle()
-  console.log(
-    await page.evaluate(() => {
-      const $body = document.querySelector('body')
-      return $body ? $body.innerHTML : null
-    })
-  )
   const { error, message, data } = await page.evaluate(() => {
     const $body = document.querySelector('body')
     const bodyHTML = $body ? $body.innerHTML : ''
