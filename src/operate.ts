@@ -26,7 +26,7 @@ const login = async (username: string, password: string): Promise<void> => {
       return { error: true, message: '用户不存在' }
     } else if (bodyHTML.includes('当前IP已在线')) {
       return { error: true, message: '当前IP已在线' }
-    } else {
+    } else if (bodyHTML.includes('登录成功')) {
       const $username = document.querySelector<HTMLSpanElement>('#user_name')
       const $usedFlow = document.querySelector<HTMLSpanElement>('#used_flow')
       const $usedTime = document.querySelector<HTMLSpanElement>('#used_time')
@@ -42,6 +42,11 @@ const login = async (username: string, password: string): Promise<void> => {
       return {
         error: false,
         data: { username, usedFlow, usedTime, balance, ip }
+      }
+    } else {
+      return {
+        error: true,
+        message: bodyHTML
       }
     }
   })
