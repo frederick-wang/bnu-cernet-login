@@ -24,6 +24,8 @@ const login = async (username: string, password: string): Promise<void> => {
     const bodyHTML = $body ? $body.innerHTML : ''
     if (bodyHTML.includes('用户不存在')) {
       return { error: true, message: '用户不存在' }
+    } else if (bodyHTML.includes('帐号或密码错误')) {
+      return { error: true, message: '帐号或密码错误' }
     } else if (bodyHTML.includes('当前IP已在线')) {
       return { error: true, message: '当前IP已在线' }
     } else if (bodyHTML.includes('在线终端数已满')) {
