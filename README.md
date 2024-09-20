@@ -1,3 +1,5 @@
+**此脚本已经被功能更强大的 bnu-cernet-cli 取代，请使用: <https://github.com/frederick-wang/bnu-cernet-cli>，仅需 Python 版本 >= 3.2 即可使用。**
+
 # bnu-cernet-login
 
 北师大校园网登录脚本
